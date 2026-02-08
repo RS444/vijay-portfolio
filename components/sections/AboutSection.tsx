@@ -63,7 +63,7 @@ export default function AboutSection() {
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap justify-center gap-5 md:justify-start">
             <Button size="lg" className="px-8 py-6 text-base" asChild>
-              <Link href="/contact">Contact Me</Link>
+              <Link href="#contact">Contact Me</Link>
             </Button>
 
             <Button
@@ -72,7 +72,7 @@ export default function AboutSection() {
               className="px-8 py-6 text-base"
               asChild
             >
-              <Link href="/projects">View Projects</Link>
+              <Link href="#projects">View Projects</Link>
             </Button>
           </div>
         </motion.div>
