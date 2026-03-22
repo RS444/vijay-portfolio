@@ -2,91 +2,128 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { CalendarDays, GraduationCap, Code2, Cpu, BrainCircuit, LineChart } from "lucide-react"
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="relative flex min-h-[calc(100vh-80px)] items-center px-6"
-    >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-24 md:grid-cols-2">
+    <section id="about" className="relative py-24 px-6 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          Behind the <span className="text-gradient">Code.</span>
+        </h2>
+        <p className="mt-4 text-lg text-zinc-400 max-w-2xl">
+          A blend of artificial intelligence, system-level engineering, and a passion for building impactful products.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[320px]">
         
-        {/* Left: Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-center md:justify-start"
+        {/* Card 1: Main Profile (Spans 2 cols, 2 rows) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="glass-card md:col-span-2 md:row-span-2 relative overflow-hidden group p-8 flex flex-col justify-end"
         >
-          <div className="relative h-[420px] w-[340px] overflow-hidden rounded-2xl border shadow-sm">
+          <div className="absolute inset-0 z-0">
             <Image
-              src="/images/pic.png"
+              src="/images/profile.png"
               alt="Vijay profile"
               fill
-              className="object-cover"
-              style={{ objectPosition: "50% 20%" }}
+              className="object-cover object-top opacity-90 group-hover:opacity-100 transition-all duration-500"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+          </div>
+          <div className="relative z-10">
+            <h3 className="text-3xl font-bold mb-2 text-white">Vijay R S</h3>
+            <p className="text-zinc-300 text-lg leading-relaxed max-w-md">
+              Passionate about applying AI to healthcare, automation, and system-level engineering. I thrive at the intersection of hardware and machine learning.
+            </p>
           </div>
         </motion.div>
 
-        {/* Right: Text Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col justify-center text-center md:text-left"
+        {/* Card 2: Core Skills */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="glass-card md:col-span-2 p-8 relative overflow-hidden flex flex-col justify-center"
         >
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-            Hi, I’m <span className="text-primary">Vijay R S</span>
-          </h1>
-
-          {/* ✅ Subtle Role Strip */}
-          <p className="mt-3 text-sm uppercase tracking-widest text-muted-foreground">
-            AI • Machine Learning • IoT • Full-Stack
-          </p>
-
-          <p className="mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground">
-            AI & Data Science Engineer specializing in Machine Learning, IoT,
-            and full-stack development. I build intelligent systems that solve
-            real-world problems.
-          </p>
-
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            Passionate about applying AI to healthcare, automation, and
-            system-level engineering.
-          </p>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-5 md:justify-start">
-            <Button size="lg" className="px-8 py-6 text-base" asChild>
-              <Link href="#contact">Contact Me</Link>
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-base"
-              asChild
-            >
-              <Link href="#projects">View Projects</Link>
-            </Button>
+          <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/10 blur-3xl rounded-full pointer-events-none" />
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+            <BrainCircuit className="text-blue-400" /> Technical Arsenal
+          </h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between text-sm mb-1 text-zinc-300"><span className="flex items-center gap-2"><Cpu size={16}/> Machine Learning</span><span>90%</span></div>
+                <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden"><div className="h-full bg-blue-500 w-[90%]" /></div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1 text-zinc-300"><span className="flex items-center gap-2"><LineChart size={16}/> Deep Learning</span><span>80%</span></div>
+                <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden"><div className="h-full bg-emerald-500 w-[80%]" /></div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between text-sm mb-1 text-zinc-300"><span className="flex items-center gap-2"><Code2 size={16}/> Python & Full-Stack</span><span>90%</span></div>
+                <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[90%]" /></div>
+              </div>
+               <div>
+                <div className="flex justify-between text-sm mb-1 text-zinc-300"><span className="flex items-center gap-2"><Cpu size={16}/> IoT & Sensors</span><span>85%</span></div>
+                <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden"><div className="h-full bg-amber-500 w-[85%]" /></div>
+              </div>
+            </div>
           </div>
         </motion.div>
-      </div>
 
-      {/* Scroll Down Indicator — untouched */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground">
-        <Link
-          href="#education"
-          className="flex flex-col items-center gap-1 text-sm"
+        {/* Card 3: Education Timeline */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="glass-card md:col-span-2 lg:col-span-1 p-8 relative overflow-hidden flex flex-col justify-center"
         >
-          <span className="opacity-70">Scroll down</span>
-          <ChevronDown className="h-5 w-5 animate-bounce opacity-70" />
-        </Link>
+           <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white">
+            <GraduationCap className="text-emerald-400" /> Education
+          </h3>
+          <div className="space-y-6">
+            <div className="relative pl-6 border-l border-zinc-700/50">
+              <div className="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950" />
+              <h4 className="font-semibold text-zinc-200">B.Tech in AI & DS</h4>
+              <p className="text-xs text-zinc-400 mt-1 flex items-center gap-1"><CalendarDays size={12}/> SRM Valliammai (2023 - 26)</p>
+            </div>
+            <div className="relative pl-6 border-l border-zinc-700/50">
+              <div className="absolute w-3 h-3 bg-zinc-600 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950" />
+              <h4 className="font-semibold text-zinc-200">Diploma in ECE</h4>
+              <p className="text-xs text-zinc-400 mt-1 flex items-center gap-1"><CalendarDays size={12}/> SRM Valliammai (2019 - 23)</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Card 4: Quick Fact */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="glass-card p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <h3 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-600 mb-2">5+</h3>
+          <p className="text-zinc-400 text-sm uppercase tracking-widest font-medium">Major Projects Delivered</p>
+        </motion.div>
+
       </div>
     </section>
   )

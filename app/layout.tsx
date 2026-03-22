@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import Navbar from "@/components/layout/Navbar"
 import { ThemeProvider } from "next-themes"
+import { CommandMenu } from "@/components/ui/CommandMenu"
 
 export const metadata: Metadata = {
   title: "Vijay | AI & Data Science Portfolio",
@@ -19,10 +20,12 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
         >
           <Navbar />
+          <CommandMenu />
           <main className="mx-auto max-w-7xl px-6 py-10">
             {children}
           </main>

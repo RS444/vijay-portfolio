@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { useEffect, useState } from "react"
 
 export default function Navbar() {
@@ -51,8 +50,6 @@ export default function Navbar() {
               {item}
             </Link>
           ))}
-
-          <ThemeToggle />
 
           <Link
             href="/resume/Vijay_RS_Resume.pdf"
