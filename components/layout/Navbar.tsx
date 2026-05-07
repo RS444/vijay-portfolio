@@ -50,14 +50,6 @@ export default function Navbar() {
               {item}
             </Link>
           ))}
-
-          <Link
-            href="/resume/Vijay_RS_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button>Resume</Button>
-          </Link>
         </div>
       </nav>
     </header>

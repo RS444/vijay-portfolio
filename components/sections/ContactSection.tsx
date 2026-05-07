@@ -145,7 +145,7 @@ export default function ContactSection() {
               <Github size={20} />
             </Link>
             <Link 
-              href="https://www.linkedin.com/in/vijay-rs-385387271" 
+              href="https://www.linkedin.com/in/vijay-r-s-385387271/" 
               target="_blank" 
               className="p-3 rounded-full bg-white/5 border border-white/10 text-zinc-400 hover:text-white hover:bg-white/10 transition-all"
             >

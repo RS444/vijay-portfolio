@@ -65,15 +65,29 @@ export default function ProjectsSection({ id }: Props) {
                 </div>
 
                 <div className="mt-16 flex justify-between items-end border-t border-white/5 pt-8">
-                  <Link 
-                    href={project.href} 
-                    className="inline-flex items-center gap-3 text-lg font-medium text-white hover:text-blue-400 transition-colors"
-                  >
-                    View Case Study
-                    <span className="p-3 bg-white/10 rounded-full group-hover:bg-blue-500 group-hover:text-white transition-all">
-                      <ArrowUpRight size={20} />
-                    </span>
-                  </Link>
+                  <div className="flex flex-wrap gap-4">
+                    <Link 
+                      href={project.href} 
+                      className="inline-flex items-center gap-3 text-lg font-medium text-white hover:text-blue-400 transition-colors"
+                    >
+                      View Case Study
+                      <span className="p-3 bg-white/10 rounded-full group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <ArrowUpRight size={20} />
+                      </span>
+                    </Link>
+                    {project.github && (
+                      <Link 
+                        href={project.github} 
+                        target="_blank"
+                        className="inline-flex items-center gap-3 text-lg font-medium text-zinc-400 hover:text-white transition-colors group/gh"
+                      >
+                        GitHub Repo
+                        <span className="p-3 bg-white/10 rounded-full group-hover/gh:bg-white/20 transition-all">
+                          <ArrowUpRight size={20} />
+                        </span>
+                      </Link>
+                    )}
+                  </div>
                 </div>
 
               </div>

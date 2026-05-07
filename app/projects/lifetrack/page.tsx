@@ -36,7 +36,7 @@ export default function LifeTrackCaseStudy() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-14 glass-card p-6 md:p-8 flex flex-wrap gap-3"
           >
-            {["Machine Learning", "IoT", "Flutter", "ESP32", "Python", "Google Fit", "Health Analytics"].map((tech) => (
+            {["Machine Learning", "IoT", "React.js", "ESP32", "Python", "ThingSpeak", "Health Analytics"].map((tech) => (
               <span key={tech} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-zinc-300 text-sm font-medium">
                 {tech}
               </span>
@@ -77,7 +77,7 @@ export default function LifeTrackCaseStudy() {
 
             <div className="glass flex flex-col items-center p-6 rounded-2xl w-full md:w-1/3 border-t-emerald-500/50">
               <Smartphone size={32} className="text-emerald-400 mb-4" />
-              <h3 className="font-bold text-lg mb-2">Flutter App</h3>
+              <h3 className="font-bold text-lg mb-2">React.js Web App</h3>
               <p className="text-sm text-zinc-400 text-center">Visualizes data and delivers clinical insights.</p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function LifeTrackCaseStudy() {
               "Mental health integration & chatbot",
               "Automated emergency alerts",
               "Encrypted patient profiles",
-              "Google Fit API sync"
+              "ThingSpeak integration"
             ].map((feature, i) => (
               <div key={i} className="flex gap-3 items-start p-4 rounded-xl bg-white/5 border border-white/5">
                 <CheckCircle2 className="text-blue-500 shrink-0 mt-0.5" size={20} />
